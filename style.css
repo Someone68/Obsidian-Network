@@ -1,7 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
 * {
 	padding: 0;
 	margin: 0;
 	font-family: monospace;
+}
+
+.title {
+	font-family: "Major Mono Display", monospace;
+	text-align: center;
+	font-size: 70px;
+}
+
+.center {
+	text-align: center;
+}
+
+.mleft {
+	margin-left: 40px;
+}
+
+.mmleft {
+	margin-left: 65px;
+}
+
+.mright {
+	margin-right: 40px;
+}
+
+.mmright {
+	margin-right: 65px;
+}
+
+.mtop {
+	margin-top: 40px;
+}
+
+.mmtop {
+	margin-top: 65px;
+}
+
+.mbottom {
+	margin-bottom: 40px;
+}
+
+.mmbottom {
+	margin-bottom: 65px;
+}
+
+.mm {
+	font-family: "Major Mono Display", monospace;
 }
 
 html,
@@ -37,6 +85,7 @@ nav a {
 	padding: 0 10px;
 	border-bottom: 2.2px solid transparent;
 	transition-duration: 0.3s;
+	font-size: 14.6px;
 }
 
 nav a.active {
@@ -59,4 +108,24 @@ nav a:not(.active):hover {
 		blueviolet,
 		transparent
 	);
+}
+
+.right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	height: 50px;
+	padding-right: 30px;
+	font-size: 14.6px;
+	font-weight: bold;
+	z-index: -1;
+}
+
+.content {
+	position: relative;
+	top: 60px;
 }
