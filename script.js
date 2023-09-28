@@ -47,3 +47,46 @@ function cloak() {
 	let tab = window.open("about:blank");
 	tab.document.body.innerHTML = `<style>*{padding:0;margin:0;}html,body{width:100%;height:100vh}</style><iframe src="https://lunar-eclipse.pages.dev" style="border:0px #ffffff none;" name="lunar" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>`;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	if (!localStorage.already) {
+		localStorage.showPanic = "Yes";
+	}
+	localStorage.already = "Yes";
+});
+
+function replaceGoogle() {
+	location.replace("https://google.com");
+}
+
+function checkPanic() {
+	if (localStorage.showPanic) {
+		qsall(".panic", (button) => {
+			button.style.display = "inline-block";
+			button.addEventListener("click", replaceGoogle);
+		});
+	} else {
+		qsall(".panic", (button) => {
+			button.style.display = "none";
+		});
+	}
+}
+
+checkPanic();
+
+document.addEventListener("keydown", (e) => {
+	if (localStorage.showPanic) {
+		if (e.key.toLowerCase() === "p") {
+			replaceGoogle();
+		}
+	}
+});
+
+function togglePanic() {
+	if (localStorage.showPanic) {
+		localStorage.removeItem("showPanic");
+	} else {
+		localStorage.showPanic = "Yes";
+	}
+	checkPanic();
+}
