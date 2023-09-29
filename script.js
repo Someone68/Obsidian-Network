@@ -35,7 +35,7 @@ function customdis() {
 	let text = prompt("Tab Name*: ");
 	let favicon = prompt("Tab Icon Link (OPTIONAL): ");
 	if (!favicon) {
-		favicon = "not set will cause 404 but it fine";
+		favicon = "not set will cause fourofour but it fine";
 	}
 	localStorage.favicon = favicon;
 	localStorage.title = text;
