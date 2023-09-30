@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lunar Eclipse</title>
+		<link href="../style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="largecontent.css" />
+		<script
+			src="https://kit.fontawesome.com/1abfab8baa.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="shortcut icon"
+			href="../img/lunar.png"
+			type="image/png"
+			class="favicon"
+		/>
+	</head>
+	<body>
+		<nav class="nav" id="nav">
+			<a href="../index.html">Home</a>
+			<a href="../prxy.html" class="active">Prxy</a>
+			<a href="../gxmes.html">Gxmes</a>
+			<a href="../settings.html">Settings</a>
+			<div class="right">
+				<button onclick="hideNav()">Hide navagation bar</button>
+				<button class="panic">Panic Switch [P]</button>
+				<p id="time">loading...</p>
+			</div>
+		</nav>
+		<div class="line"></div>
+		<div class="content">
+			<button class="shownav" onclick="showNav()">Show navagation Bar</button>
+			<iframe
+				src=""
+				id="flow"
+				frameborder="0"
+				width="100%"
+				height="100%"
+			></iframe>
+		</div>
+		<script src="https://util.tinymooshmallow.repl.co/util.js"></script>
+		<script src="../script.js"></script>
+	</body>
+</html>

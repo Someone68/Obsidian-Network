@@ -99,6 +99,7 @@ nav a:not(.active):hover {
 
 .line {
 	position: fixed;
+	z-index: 9999999;
 	top: 50px;
 	width: 100%;
 	height: 2px;
@@ -154,9 +155,12 @@ button:hover {
 }
 
 .panic {
-	margin-right: 30px;
 	border-color: white;
 	display: none;
+}
+
+nav button {
+	margin-right: 30px;
 }
 
 * {
@@ -176,4 +180,37 @@ button:hover {
 	background-color: #8a2be2;
 	border-radius: 0px;
 	border: 4px solid #16161e;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+}
+
+button:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.shownav {
+	display: none;
+	position: fixed;
+	top: 15px;
+	left: 15px;
+}
+
+input[type="text"] {
+	cursor: pointer;
+	outline: none;
+	border: 2px solid black;
+	background: #262838;
+	color: white;
+	padding: 7px;
+	transition: 0.3s;
+	width: 250px;
+}
+
+input[type="text"]:focus {
+	cursor: text;
+	border-color: blueviolet;
 }

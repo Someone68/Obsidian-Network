@@ -20,6 +20,12 @@ function checkCon() {
 			}
 		}
 	}
+	if (!localStorage.flowlink) {
+		localStorage.flowlink = "https://mymaths.academy/";
+	}
+	if (s("#flow")) {
+		s("#flow").src = localStorage.flowlink;
+	}
 }
 
 checkCon();
@@ -55,6 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
 	localStorage.already = "Yes";
 });
 
+const xor = {
+	encode(str) {
+		if (!str) return str;
+		return encodeURIComponent(
+			str
+				.toString()
+				.split("")
+				.map((char, ind) =>
+					ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
+				)
+				.join("")
+		);
+	},
+	decode(str) {
+		if (!str) return str;
+		let [input, ...search] = str.split("?");
+
+		return (
+			decodeURIComponent(input)
+				.split("")
+				.map((char, ind) =>
+					ind % 2 ? String.fromCharCode(char.charCodeAt(0) ^ 2) : char
+				)
+				.join("") + (search.length ? "?" + search.join("?") : "")
+		);
+	},
+};
+
 function replaceGoogle() {
 	location.replace("https://google.com");
 }
@@ -89,4 +123,28 @@ function togglePanic() {
 		localStorage.showPanic = "Yes";
 	}
 	checkPanic();
+}
+
+function redir(url) {
+	location.href = url;
+}
+
+function replace(url) {
+	location.replace(url);
+}
+
+function hideNav() {
+	s("nav").style.display = "none";
+	s(".line").style.display = "none";
+	s(".content").style.height = "100vh";
+	s(".content").style.top = "0";
+	s(".shownav").style.display = "inline-block";
+}
+
+function showNav() {
+	s("nav").style.display = "flex";
+	s(".line").style.display = "";
+	s(".content").style.height = "calc(100vh - 42px)";
+	s(".content").style.top = "52px";
+	s(".shownav").style.display = "none";
 }
