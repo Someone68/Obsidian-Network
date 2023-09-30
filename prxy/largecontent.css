@@ -6,3 +6,9 @@
 	bottom: 0;
 	top: 52px;
 }
+
+.onright {
+	top: 15px;
+	right: 15px;
+	left: unset;
+}
