@@ -1,3 +1,5 @@
+let shouldpanic = true;
+
 function everySecond() {
 	s("#time").innerHTML =
 		new Date().toLocaleTimeString() +
@@ -32,6 +34,9 @@ function checkCon() {
 	if (s("#prxylink")) {
 		s("#prxylink").src = localStorage.prxylink;
 	}
+	if (!localStorage.panicurl) {
+		localStorage.panicurl = "https://google.com/";
+	}
 }
 
 checkCon();
@@ -58,7 +63,7 @@ function customdis() {
 function cloak() {
 	let tab = window.open("about:blank");
 	tab.document.body.innerHTML = `<style>*{padding:0;margin:0;}html,body{width:100%;height:100vh}</style><iframe src="https://${window.location.host}" style="border:0px #ffffff none;" name="lunar" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>`;
-	location.replace("https://google.com");
+	location.replace(localStorage.panicurl);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -111,8 +116,22 @@ const xor = {
 	},
 };
 
+function onclicky() {
+	qsall("input", (input) => {
+		if (document.activeElement !== document.body) {
+			shouldpanic = false;
+		} else {
+			shouldpanic = true;
+		}
+	});
+}
+
+qsall("*", (element) => {
+	element.addEventListener("click", onclicky);
+});
+
 function replaceGoogle() {
-	location.replace("https://google.com");
+	if (shouldpanic) location.replace(localStorage.panicurl);
 }
 
 function checkPanic() {
