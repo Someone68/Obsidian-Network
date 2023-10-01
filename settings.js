@@ -4,3 +4,10 @@ s("#flowos").addEventListener("change", () => {
 });
 
 s("#flowos").value = localStorage.flowlink;
+
+s("#prxyl").addEventListener("change", () => {
+	localStorage.prxylink = s("#prxyl").value;
+	checkCon();
+});
+
+s("#prxyl").value = localStorage.prxylink;

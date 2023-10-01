@@ -72,13 +72,32 @@
 				Toggle Panic Switch
 			</button>
 			<h1 class="mleft space">Prxy</h1>
+			<label for="prxyl" class="mmleft">Default Prxy Link</label><br />
+			<input
+				type="text"
+				id="prxyl"
+				class="mmleft space"
+				placeholder="https://leclipse.onrender.com/"
+			/><br />
 			<label for="flowos" class="mmleft">FlowOS Link</label><br />
 			<input
 				type="text"
 				id="flowos"
-				class="mmleft space"
+				class="mmleft"
 				placeholder="https://mymaths.academy/"
-			/>
+			/><br />
+			<p class="mmleft space">
+				alternate link (slower, use if blxcked):
+				https://leclipseflow.onrender.com
+			</p>
+			<h1 class="mleft">Clear site data</h1>
+			<h3 class="mleft space">fixes issues, resets settings</h3>
+			<button
+				onclick="localStorage.clear();deleteAllCookies();location.reload();"
+				class="mmleft space"
+			>
+				Clear
+			</button>
 		</div>
 		<script src="https://util.tinymooshmallow.repl.co/util.js"></script>
 		<script src="script.js"></script>

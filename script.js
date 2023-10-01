@@ -26,6 +26,12 @@ function checkCon() {
 	if (s("#flow")) {
 		s("#flow").src = localStorage.flowlink;
 	}
+	if (!localStorage.prxylink) {
+		localStorage.prxylink = "https://leclipse.onrender.com/";
+	}
+	if (s("#prxylink")) {
+		s("#prxylink").src = localStorage.prxylink;
+	}
 }
 
 checkCon();
@@ -60,6 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	localStorage.already = "Yes";
 });
+
+function deleteAllCookies() {
+	const cookies = document.cookie.split(";");
+
+	for (let i = 0; i < cookies.length; i++) {
+		const cookie = cookies[i];
+		const eqPos = cookie.indexOf("=");
+		const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+		document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+	}
+	if (!localStorage.already) {
+		localStorage.showPanic = "Yes";
+	}
+	localStorage.already = "Yes";
+}
 
 const xor = {
 	encode(str) {
