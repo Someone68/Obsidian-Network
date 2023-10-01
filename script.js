@@ -25,17 +25,29 @@ function checkCon() {
 	if (!localStorage.flowlink) {
 		localStorage.flowlink = "https://mymaths.academy/";
 	}
+	if (localStorage.flowlink) {
+		if (localStorage.flowlink.toLowerCase() === "https://")
+			localStorage.flowlink = "https://mymaths.academy/";
+	}
 	if (s("#flow")) {
 		s("#flow").src = localStorage.flowlink;
 	}
 	if (!localStorage.prxylink) {
 		localStorage.prxylink = "https://leclipse.onrender.com/";
 	}
+	if (localStorage.prxylink) {
+		if (localStorage.prxylink.toLowerCase() === "https://")
+			localStorage.prxylink = "https://leclipse.onrender.com/";
+	}
 	if (s("#prxylink")) {
 		s("#prxylink").src = localStorage.prxylink;
 	}
 	if (!localStorage.panicurl) {
 		localStorage.panicurl = "https://google.com/";
+	}
+	if (localStorage.panicurl) {
+		if (localStorage.panicurl.toLowerCase() === "https://")
+			localStorage.panicurl = "https://google.com/";
 	}
 }
 
