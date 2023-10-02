@@ -39,6 +39,7 @@ s("#panicurl").addEventListener("change", () => {
 s("#panicurl").value = localStorage.panicurl;
 
 document.onclick = () => {
+	checkCon();
 	localStorage.flowlink = s("#flowos").value;
 	if (!localStorage.flowlink.includes("https://")) {
 		let newlcs = localStorage.flowlink.split("");
