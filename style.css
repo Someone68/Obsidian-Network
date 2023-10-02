@@ -214,3 +214,7 @@ input[type="text"]:focus {
 	cursor: text;
 	border-color: blueviolet;
 }
+
+label {
+	font-weight: bolder;
+}
