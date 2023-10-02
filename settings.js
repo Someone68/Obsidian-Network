@@ -46,6 +46,9 @@ document.onclick = () => {
 		newlcs.unshift("https://");
 		localStorage.flowlink = newlcs.join("");
 	}
+	if (!localStorage.flowlink) {
+		localStorage.flowlink = "https://mymaths.academy/";
+	}
 	s("#flowos").value = localStorage.flowlink;
 	checkCon();
 	localStorage.prxylink = s("#prxyl").value;
@@ -55,6 +58,9 @@ document.onclick = () => {
 		newlcs.unshift("https://");
 		localStorage.prxylink = newlcs.join("");
 	}
+	if (!localStorage.prxylink) {
+		localStorage.prxylink = "https://leclipse.onrender.com/";
+	}
 	s("#prxyl").value = localStorage.prxylink;
 	checkCon();
 	localStorage.panicurl = s("#panicurl").value;
@@ -62,6 +68,9 @@ document.onclick = () => {
 		let newlcs = localStorage.panicurl.split("");
 		newlcs.unshift("https://");
 		localStorage.panicurl = newlcs.join("");
+	}
+	if (!localStorage.panicurl) {
+		localStorage.panicurl = "https://google.com/";
 	}
 	s("#panicurl").value = localStorage.panicurl;
 	checkCon();
