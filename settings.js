@@ -46,32 +46,33 @@ document.onclick = () => {
 		newlcs.unshift("https://");
 		localStorage.flowlink = newlcs.join("");
 	}
-	if (!localStorage.flowlink) {
+	if (!localStorage.flowlink && document.activeElement === document.body) {
 		localStorage.flowlink = "https://mymaths.academy/";
 	}
+	localStorage.prxylink = s("#prxyl").value;
 	s("#flowos").value = localStorage.flowlink;
 	checkCon();
-	localStorage.prxylink = s("#prxyl").value;
 
 	if (!localStorage.prxylink.includes("https://")) {
 		let newlcs = localStorage.prxylink.split("");
 		newlcs.unshift("https://");
 		localStorage.prxylink = newlcs.join("");
 	}
-	if (!localStorage.prxylink) {
+	if (!localStorage.prxylink && document.activeElement === document.body) {
 		localStorage.prxylink = "https://leclipse.onrender.com/";
 	}
+	localStorage.panicurl = s("#panicurl").value;
 	s("#prxyl").value = localStorage.prxylink;
 	checkCon();
-	localStorage.panicurl = s("#panicurl").value;
 	if (!localStorage.panicurl.includes("https://")) {
 		let newlcs = localStorage.panicurl.split("");
 		newlcs.unshift("https://");
 		localStorage.panicurl = newlcs.join("");
 	}
-	if (!localStorage.panicurl) {
+	if (!localStorage.panicurl && document.activeElement === document.body) {
 		localStorage.panicurl = "https://google.com/";
 	}
+	localStorage.panicurl = s("#panicurl").value;
 	s("#panicurl").value = localStorage.panicurl;
 	checkCon();
 };

@@ -25,7 +25,7 @@ function checkCon() {
 	if (!localStorage.flowlink) {
 		localStorage.flowlink = "https://mymaths.academy/";
 	}
-	if (localStorage.flowlink) {
+	if (localStorage.flowlink && document.activeElement === document.body) {
 		if (localStorage.flowlink.toLowerCase() === "https://")
 			localStorage.flowlink = "https://mymaths.academy/";
 	}
@@ -35,7 +35,7 @@ function checkCon() {
 	if (!localStorage.prxylink) {
 		localStorage.prxylink = "https://leclipse.onrender.com/";
 	}
-	if (localStorage.prxylink) {
+	if (localStorage.prxylink && document.activeElement === document.body) {
 		if (localStorage.prxylink.toLowerCase() === "https://")
 			localStorage.prxylink = "https://leclipse.onrender.com/";
 	}
@@ -45,7 +45,7 @@ function checkCon() {
 	if (!localStorage.panicurl) {
 		localStorage.panicurl = "https://google.com/";
 	}
-	if (localStorage.panicurl) {
+	if (localStorage.panicurl && document.activeElement === document.body) {
 		if (localStorage.panicurl.toLowerCase() === "https://")
 			localStorage.panicurl = "https://google.com/";
 	}
