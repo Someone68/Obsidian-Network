@@ -201,3 +201,16 @@ function showNav() {
 	s(".content").style.top = "52px";
 	s(".shownav").style.display = "none";
 }
+
+function secun() {
+	try {
+		window.open(s("#secun").value + "#translate.google.com");
+	} catch (err) {
+		console.log(error);
+	}
+}
+
+s("#secunform").addEventListener("submit", (e) => {
+	e.preventDefault();
+	secun();
+});
