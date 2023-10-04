@@ -218,3 +218,9 @@ input[type="text"]:focus {
 label {
 	font-weight: bolder;
 }
+
+a {
+	text-decoration: none;
+	color: aquamarine;
+	font-weight: bold;
+}
